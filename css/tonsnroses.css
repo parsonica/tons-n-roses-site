@@ -1,0 +1,304 @@
+:root {
+    /* The iconic Tons N Roses branding colors */
+    --primary-pink: #D1337B;
+    --dark-charcoal: #111827;
+    --light-bg: rgba(255, 255, 255, 0.1); /* Subtle transparent white overlay */
+    --spacing: 1.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-pink); /* Turns the whole background pink */
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: #ffffff; /* Changes default body text to white for perfect contrast */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Perfect, uniform 40px gap between sections */
+    padding: 20px;
+}
+
+/* --- SECTION HEADLINES --- */
+.hero h1, 
+.about-split h2, 
+.Information h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #ffffff; /* Makes section headers pop in crisp white */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow to keep text ultra-sharp */
+}
+
+/* 2. Mobile Styles (Default) */
+.main-header {
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent header */
+    padding: var(--spacing) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px); /* Soft glass effect */
+}
+
+.nav-links {
+    display: none;
+}
+
+/* Hero Section Container */
+.hero {
+    padding-top: 4rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* The Square Logo Styling */
+.hero-logo img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow for the pink backdrop */
+}
+
+/* Mobile Adjustment */
+@media (max-width: 600px) {
+    .hero-logo img {
+        width: 120px;
+        height: 120px;
+    }
+    .hero {
+        padding: 2rem 1rem;
+    }
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing);
+}
+
+/* 3. Tablet & Desktop Styles (Media Query) */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.logo img {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .main-header .container {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* About Section Layout */
+/* About Section Layout & White Box */
+.about-split {
+    width: 100%;
+}
+
+.about-box {
+    background: #ffffff;      /* Creates the solid white box background */
+    padding: 2.5rem;          /* Generates breathing room inside the box */
+    border-radius: 12px;      /* Soft corners matching your value cards and carousel */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Gives it a slight pop off the pink screen */
+    width: 100%;              /* Ensures it stretches to the full width of the container */
+}
+
+/* Adjust text inside the white box to be clean, readable charcoal black */
+.about-box h2 {
+    color: var(--primary-pink) !important; /* Forces the header inside this box to be brand pink */
+    margin-bottom: 1.25rem;
+    text-shadow: none;        /* Removes the white text-shadow from the global header rule */
+}
+
+.about-box p {
+    color: var(--dark-charcoal); /* Crisp, legible near-black text */
+    margin-bottom: 1rem;
+}
+
+.about-box p:last-child {
+    margin-bottom: 0;         /* Prevents extra accidental spacing at the bottom */
+}
+
+/* The specific pink text callout class you requested */
+.about-box .pink-text {
+    color: var(--primary-pink);
+    font-weight: 600;         /* Makes it slightly bolder so it reads like a feature line */
+}
+
+/* --- THE VALUE CARDS (MODERN WHITE GLOW STYLE) --- */
+.values-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.value-card {
+    background: #ffffff; /* Solid white background for the cards so text remains fully accessible */
+    padding: 2rem;
+    color: var(--dark-charcoal); /* Dark text inside the cards so it's clean and easy to read */
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.value-card h4 {
+    color: var(--primary-pink); /* Headings inside the white cards use the brand pink */
+    margin-bottom: 0.75rem;
+}
+
+.value-card h5 {
+    margin: 1rem 0 0.25rem 0;
+    color: var(--dark-charcoal);
+}
+
+.value-card ul {
+    margin: 0.75rem 0;
+    padding-left: 1.25rem;
+}
+
+.value-card p {
+    margin-bottom: 0.5rem;
+}
+
+/* Interactive Links inside the Cards */
+.value-card a {
+    color: var(--primary-pink);
+    text-decoration: none;
+    font-weight: 500;
+}
+.value-card a:hover {
+    text-decoration: underline;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Desktop Alignment */
+@media (min-width: 768px) {
+    .about-split {
+        flex-direction: row;
+        text-align: left;
+    }
+    
+    .values-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --- CAROUSEL FRAMEWORK LAYOUT (ZERO GAPS) --- */
+.gallery-carousel {
+    width: 100%;
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 0;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+    .carousel-container {
+        height: 300px;
+    }
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: var(--dark-charcoal);
+    font-size: 1.5rem;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.carousel-btn:hover {
+    background: var(--dark-charcoal);
+    color: #fff;
+}
+
+.prev-btn { left: 15px; }
+.next-btn { right: 15px; }
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+    color: #fff2f7;
+}
