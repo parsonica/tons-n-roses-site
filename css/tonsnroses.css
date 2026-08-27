@@ -305,27 +305,38 @@ footer {
 
 /* Header container */
 .site-header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   padding: 1rem 1.5rem;
   background-color: #ffffff;
   border-bottom: 1px solid #e5e5e5;
 }
 
+/* 3-column grid to ensure the heading is dead-center */
+.logo-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Left, Center, Right balance */
+  align-items: center;
+  width: 100%;
+}
+
+/* Pins the logo link to the far left */
+.logo-container a {
+  justify-self: start;
+}
+
 /* Logo sizing */
 .site-logo {
-  height: 48px;        /* Adjust height to fit your layout */
-  width: auto;         /* Maintains original aspect ratio */
+  height: 48px;
+  width: auto;
   display: block;
 }
 
-/* Optional hover state */
-.logo-container a {
-  display: inline-block;
-  transition: opacity 0.2s ease;
-}
-
-.logo-container a:hover {
-  opacity: 0.85;
+/* Centers the title in the page header */
+.logo-container h1 {
+  grid-column: 2;         /* Locks into the middle column */
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-pink);         /* Your chosen pink shade */
+  text-align: center;
+  line-height: 1.2;
 }
