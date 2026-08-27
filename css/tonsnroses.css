@@ -75,11 +75,11 @@ body {
 /* Mobile Adjustment */
 @media (max-width: 600px) {
     .hero-logo img {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
     }
     .hero {
-        padding: 2rem 1rem;
+        padding: 0.5rem 0.5rem;
     }
 }
 
@@ -336,7 +336,7 @@ footer {
 .logo-container h1 {
   grid-column: 2;         /* Locks into the middle column */
   margin: 0;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--primary-pink);         /* Your chosen pink shade */
   text-align: center;
