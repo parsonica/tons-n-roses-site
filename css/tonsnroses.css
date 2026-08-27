@@ -34,7 +34,7 @@ body {
 .about-split h2, 
 .Information h3 {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     color: #ffffff; /* Makes section headers pop in crisp white */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow to keep text ultra-sharp */
 }
@@ -323,6 +323,7 @@ footer {
 /* Pins the logo link to the far left */
 .logo-container a {
   justify-self: start;
+  margin-left: 0.5rem;
 }
 
 /* Logo sizing */
